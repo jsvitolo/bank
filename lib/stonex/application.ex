@@ -7,7 +7,8 @@ defmodule Stonex.Application do
 
   def start(_type, _args) do
     children = [
-      Plug.Cowboy.child_spec(Application.fetch_env!(:stonex, StonexWeb.Endpoint))
+      Plug.Cowboy.child_spec(Application.fetch_env!(:stonex, StonexWeb.Endpoint)),
+      {Stonex.Repo, []}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
