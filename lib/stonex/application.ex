@@ -7,8 +7,7 @@ defmodule Stonex.Application do
 
   def start(_type, _args) do
     children = [
-      # Starts a worker by calling: Stonex.Worker.start_link(arg)
-      # {Stonex.Worker, arg}
+      Plug.Cowboy.child_spec(Application.fetch_env!(:stonex, StonexWeb.Endpoint))
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
