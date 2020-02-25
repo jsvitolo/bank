@@ -23,7 +23,9 @@ defmodule Stonex.MixProject do
   defp deps do
     [
       {:plug_cowboy, "~> 2.1.2"},
-      {:jason, "~> 1.1"}
+      {:jason, "~> 1.1"},
+      {:ecto_sql, "~> 3.3"},
+      {:postgrex, ">= 0.0.0"}
     ]
   end
 end
